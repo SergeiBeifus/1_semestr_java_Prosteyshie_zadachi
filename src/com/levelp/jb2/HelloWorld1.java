@@ -6,17 +6,22 @@ public class HelloWorld1 {
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
 
-        double num1 = in.nextDouble();
-        double num2 = in.nextDouble();
-        double num3 = in.nextDouble();
-        double ans = num1*num2*num3;
+        int num1 = in.nextInt();
+        int num2 = in.nextInt();
+        int num3 = in.nextInt();
+        int ans = num1*num2*num3;
 
         System.out.println("произведение: "+ ans);
 
         ans = (num1+num2+num3)/3;
 
         System.out.println("среднее арифметическое: " + ans);
-        double temp;
+
+        ans = (num1+num2+num3)%3;
+
+        System.out.println("остаток: " + ans);
+
+        int temp;
         if(num1 > num2){
             temp = num1;
             num1 = num2;
