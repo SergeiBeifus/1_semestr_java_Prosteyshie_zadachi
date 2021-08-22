@@ -6,37 +6,23 @@ public class HelloWorld1 {
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
 
-        int num1 = in.nextInt();
-        int num2 = in.nextInt();
-        int num3 = in.nextInt();
-        int ans = num1*num2*num3;
-
-        System.out.println("произведение: "+ ans);
-
-        ans = (num1+num2+num3)/3;
-
-        System.out.println("среднее арифметическое: " + ans);
-
-        ans = (num1+num2+num3)%3;
-
-        System.out.println("остаток: " + ans);
-
-        int temp;
-        if(num1 > num2){
-            temp = num1;
-            num1 = num2;
-            num2 = temp;
+        System.out.println("Введите три вещественных числа");
+        double num1 = in.nextDouble();
+        double num2 = in.nextDouble();
+        double num3 = in.nextDouble();
+        double Discriminant = num2*num2 - 4*num1*num3;
+        if (Discriminant < 0){
+            System.out.println("Корней нет");
         }
-        if(num1 > num3){
-            temp = num1;
-            num1 = num3;
-            num3 = temp;
+        else if(Discriminant == 0){
+            double X = (-1*num2)/(2*num1);
+            System.out.println("X: " + X);
         }
-        if(num2 > num3){
-            temp = num2;
-            num2 = num3;
-            num3 = temp;
+        else{
+            double X1 = ((-1*num2)-(Math.sqrt(Discriminant)))/(2*num1);
+            double X2 = ((-1*num2)+(Math.sqrt(Discriminant)))/(2*num1);
+            System.out.println("X1: " + X1);
+            System.out.println("X2: " + X2);
         }
-        System.out.println("числа в порядке возрастания: " + num1 + " " + num2 + " " + num3);
     }
 }
